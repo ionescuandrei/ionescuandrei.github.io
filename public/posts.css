@@ -1,0 +1,99 @@
+body{
+    font-family: Arial,Helvetica,sans-serif;
+}
+.text-description{
+    font-size: 23px;
+    line-height: 1.5em;
+    font-weight: 300;
+    text-align: justify;
+    color: #444444;
+}
+.jumbo{
+   background-image: url(http://www.open.edu/openlearn/sites/www.open.edu.openlearn/modules/sitespecific/site-custom/ole_ng_content/ole_free_course/image-static/banner/banner-freecourse.jpg);
+}
+hr{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#more-info{
+    padding: 0px;
+}
+.postcard{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.label-text {
+    display: inline-block;
+    font-family: Open Sans Extrabold,sans-serif!important;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;
+    padding: 12px 0 0 12px;
+    color: #54cc39;
+    text-transform: uppercase;
+    line-height: 1.5em;
+    position: relative;
+    letter-spacing: -0.02em;
+}
+.lead{
+    font-family: Open Sans Semibold,sans-serif;
+    font-size: 13px;
+    color: #999;
+    line-height: 20px;
+    letter-spacing: -0.025em;
+    margin-top: 0;
+    position: relative
+}
+.nav-pills{
+    background-color:rgb(199,199,194);
+}
+.art-title{
+    font-size: 22px;
+    color: rgb(40,196,185);
+}
+#article-img{
+   width:180px; 
+   height:180px
+}
+#deleteForm{
+    display:inline;
+}
+
+/*footer*/
+.py-5 {
+    padding-top: 3rem!important;
+    padding-bottom: 3rem!important;
+}
+.bg-dark {
+    background-color: #343a40!important;
+}
+.text-white {
+    color: #fff!important;
+}
+.text-center {
+    text-align: center!important;
+}
+/*NAV BAR*/
+/*.fimg {*/
+/*   padding-top: 60px;*/
+/*}*/
+/*div.col-md-7{*/
+/*    padding-right: 2px;*/
+/*    padding-left: 2px;*/
+/*    margin-top: 5px;*/
+/*}*/
+/*div.col-md-5{*/
+/*    margin-top: 5px;*/
+/*    padding-left: 2px;*/
+/*    padding-right: 2px;*/
+/*}*/
+/*.card-img{*/
+/*    height: 230px;*/
+    
+/*}*/
+
+/*show page*/
+img-fluid{
+    max-width: 100%;
+    height: auto;
+}

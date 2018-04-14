@@ -1,0 +1,111 @@
+<% include ../partials/header %>
+<div class="container">
+          <div class="row">
+            <div class="col-md-8">
+                <article class="article"> 
+                    <h1><%=post.title%></h1>
+                    <p><em>Submmited by <%= post.author.username%><span> at <%=post.created.toString().slice(0,10).replace(/-/g,"")%></span></em></p>
+                     <div class="category"><%= post.category%></div>
+                     <span class="badge badge-pill badge-primary">Child-safe app</span>
+                     <span class="badge badge-pill badge-warning">No adds</span>
+                    <img src="<%= post.image[0] %>" class="rounded float-left" style="width:120px;height:120px;margin: 3px 13px 3px 0px;" alt="...">
+                     <p class="text-description"><%-post.shortDescription%></p>
+                    <img class="img-fluid" src="<%= post.image[1] %>">
+                    <p class="text-description"><%=post.description[0]%></p>
+                    <img class="img-fluid" src="<%= post.image[2] %>">
+                    <p class="text-description"><%=post.description[1]%></p>
+                    <% if(currentUser&&post.author.id.equals(currentUser._id)) { %>
+                    <a  class="btn btn-warning" href="/posts/<%= post._id%>/edit">Edit</a>
+                    <form id="deleteForm" action="/posts/<%= post._id%>?_method=DELETE"method="POST">
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
+                    <% } %>
+                </article>
+                <hr>
+                <div class="well">
+                    <div class="text-right">
+                        <a class="btn btn-success" href="/posts/<%= post._id%>/comments/new">Add new comment</a>
+                        <hr>
+                    </div>
+                <%post.comments.forEach(function(comment){ %>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <strong><%= comment.author.username %></strong>
+                            <span class="pull-right">10 days ago</span>
+                            <p>
+                                <%= comment.text %> 
+                            </p>
+                             <% if(currentUser&&comment.author.id.equals(currentUser._id)) { %>
+                             <a class="btn btn-xs btn-warning" href="/posts/<%= post._id %>/comments/<%= comment._id %>/edit">Edit</a>
+                             <form id="deleteForm" action="/posts/<%= post._id%>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                                  <button class="btn btn-xs btn-danger">Delete</button>
+                             </form>
+                             <% } %>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+            </div>
+             <div class="col-md-4">
+          <!-- Search Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">Search</h5>
+            <div class="card-body">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                  <button class="btn btn-secondary" type="button">Go!</button>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categories Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">Categories</h5>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-6">
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <a href="#">Web Design</a>
+                    </li>
+                    <li>
+                      <a href="#">HTML</a>
+                    </li>
+                    <li>
+                      <a href="#">Freebies</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-lg-6">
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <a href="#">JavaScript</a>
+                    </li>
+                    <li>
+                      <a href="#">CSS</a>
+                    </li>
+                    <li>
+                      <a href="#">Tutorials</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Side Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">Side Widget</h5>
+            <div class="card-body">
+              You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+            </div>
+          </div>
+
+        </div>
+        </div>
+      </div>
+   
+
+<% include ../partials/footer %>
